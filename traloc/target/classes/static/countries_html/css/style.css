@@ -1,0 +1,41 @@
+    .land {
+      fill: #CCCCCC;
+      fill-opacity: 1;
+      stroke: white;
+      stroke-opacity: 1;
+      stroke-width: 0.5;
+      display: block;
+      margin-left: -300px;
+    }
+    
+    .land:hover {
+      fill: #ff0000 !important;
+      cursor: pointer;
+    }
+    
+    #GB,
+    #AT,
+    #FR,
+    #DE,
+    #IT,
+    #NL,
+    #AU,
+    #US,
+    #IL {
+      fill: #ff0000;
+    }
+    
+    .tooltiptext {
+      display: none;
+      width: 120px;
+      background-color: orange;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      position: fixed;
+      z-index: 1;
+    }
+    
+    .tooltiptext.active {
+      display: initial;
+    }

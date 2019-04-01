@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<title>Traloc</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+<body class="w3-light-grey">
+<script>
+  window.onload = localStorage.getItem("response");
+</script>
+<!-- Top container -->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+  <span class="w3-bar-item w3-right">Traloc</span>
+</div>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container w3-row">
+    <div class="w3-col s4">
+      <img src="user.png" class="w3-circle w3-margin-right" style="width:46px">
+    </div>
+    <div class="w3-col s8 w3-bar">
+      <span>Welcome, <strong>Traveler</strong></span><br>
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
+    </div>
+  </div>
+  <hr>
+  <div class="w3-container">
+    <h5>Dashboard</h5>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>  Overview</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cutlery fa-fw"></i>  Restaurants</a>
+    <a href="#country" class="w3-bar-item w3-button w3-padding"><i class="fa fa-map fa-fw"></i>  Country Map</a>
+    <a href="#geographicaldata" class="w3-bar-item w3-button w3-padding"><i class="fa fa-map-marker fa-fw"></i>  Country Details</a>
+    <a href="#highlights" class="w3-bar-item w3-button w3-padding"><i class="fa fa-smile-o fa-fw"></i>  Highlights</a>
+    <a href="#stats" class="w3-bar-item w3-button w3-padding"><i class="fa fa-line-chart fa-fw"></i>  General Stats</a>
+    <a href="#blogs" class="w3-bar-item w3-button w3-padding"><i class="fa fa-history fa-fw"></i>  Related Blogs</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Settings</a><br><br>
+  </div>
+</nav>
+
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+
+  <!-- Header -->
+  <header class="w3-container" style="padding-top:22px">
+    <h5><b><i class="fa fa-folder-open"></i> Dashboard </b></h5>
+  </header>
+
+  <div class="w3-row-padding w3-margin-bottom">
+    <div class="w3-quarter">
+      <div class="w3-container w3-yellow w3-padding-16">
+        <div id="restaurants1" class="w3-right"><i class="fa fa-cutlery w3-xxlarge"></i></div>
+
+        <div id="restaurants2" class="w3-left"> </div>
+        <h4>Restaurants</h4>
+        <p id="restaurants"></p>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-red w3-padding-16">
+        <div id="cuisines1" class="w3-right"><i class="fa fa-coffee w3-xxlarge"></i></div>
+
+        <div id="cuisines2" class="w3-left"> </div>
+        <h4>Cuisines</h4>
+        <p id="cuisine"></p>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-yellow w3-padding-16">
+        <div id="costfortwo1" class="w3-right"><i class="fa fa-money w3-xxlarge"></i></div>
+
+        <div id="costfortwo2" class="w3-left"> </div>
+        <h4>Cost for two</h4>
+        <p id="cost"></p>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-red w3-padding-16">
+        <div id="rating1" class="w3-right"><i class="fa fa-star w3-xxlarge"></i></div>
+
+        <div id="rating2" class="w3-left"> </div>
+        <h4>Rating</h4>
+        <p id="rating"></p>
+      </div>
+    </div>
+  </div>
+  <div class="w3-panel">
+    <div id="country" class="w3-row-padding" style="margin:0 0px">
+      <h5>Country</h5>
+      <div class="w3-content">
+
+        <span class="tooltiptext" id="tooltip"></span>
+        <iframe width="100%" height="550px" src="./Countries/boliviaHigh.svg" frameborder="0" scrolling="no" align="center">
+        </iframe>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="w3-row-padding w3-margin-bottom">
+    <div id="geographicaldata" class="w3-half">
+      <table class="w3-table w3-striped w3-orange">
+        <tr>
+          <td><i class="fa fa-map-pin w3-text-red w3-large"></i></td>
+          <td>Country</td>
+        </tr>
+        <tr>
+          <td><i class="w3-text-red w3-large w3-left"></i></td>
+          <td> </td>
+          <td id="name"></td>
+        </tr>
+        <tr>
+          <td><i class="fa fa-map-marker w3-text-blue w3-large"></i></td>
+          <td>Capital</td>
+          <td><i> </i></td>
+        </tr>
+        <tr>
+          <td><i class="w3-text-red w3-large"></i></td>
+          <td> </td>
+          <td id="capital"></td>
+        </tr>
+        <tr>
+          <td><i class="fa fa-thermometer w3-text-red w3-large"></i></td>
+          <td>Average Temperature</td>
+          <td><i> </i></td>
+        </tr>
+        <tr>
+
+          <td><i class="w3-text-red w3-large"></i></td>
+          <td> </td>
+          <td id="temp"></td>
+        </tr>
+        <tr>
+          <td><i class="fa fa-money w3-text-green w3-large"></i></td>
+          <td>Currency</td>
+          <td><i> </i></td>
+        </tr>
+        <tr>
+          <td><i class="w3-text-red w3-large"></i></td>
+          <td> </td>
+          <td id="currency"></td>
+        </tr>
+
+        <tr>
+          <td><i class="fa fa-language w3-text-blue w3-large"></i></td>
+          <td>Languages</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><i class="w3-text-red w3-large"></i></td>
+          <td> </td>
+          <td id="languages"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="w3-half">
+      <div class="w3-container w3-blue w3-padding 20px 50px 20px 50px">
+        <div id="highlights1" class="w3-right"><i class="fa fa-smile-o w3-xxxlarge"></i></div>
+        <div id="highlights2" class="w3-left"></div>
+        <h4>Highlights</h4>
+        <p id="highlights"></p>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div id="stats" class="w3-container">
+    <h5>General Stats</h5>
+    <p>New Visitors</p>
+    <div class="w3-grey">
+      <div class="w3-container w3-center w3-padding w3-green" style="width:25%">+25%</div>
+    </div>
+
+    <p>Recommended</p>
+    <div class="w3-grey">
+      <div class="w3-container w3-center w3-padding w3-red" style="width:75%">75%</div>
+    </div>
+  </div>
+  <hr>
+  <div id="blogs" class="w3-container">
+    <h5>Recent Blogs</h5>
+    <ul class="w3-ul w3-card-4 w3-white" id="url">
+
+    </ul>
+  </div>
+  <hr>
+
+  <br>
+
+  <!-- End page content -->
+</div>
+<script>
+    var response = JSON.parse(localStorage.getItem("response"));
+    var restaurants = response.restaurants;
+    var res ="";
+    var cuisine = "";
+    var cost = "";
+    var rating = "";
+    for (var i = 0; i < restaurants.length; i++) {
+        n = restaurants[i].name.split(" ")
+        res += "<p>"
+        for ( var j = 0; j < n.length; j++ ) {
+            if ( j === 4) {
+                break;
+            }
+             res += n[j] + " ";
+        }
+        res += "</p>"
+        cuisine += "<p>"+restaurants[i].cuisine+"</p>"
+        cost += "<p>"+restaurants[i].costForTwo+"</p>"
+        rating += "<p>"+restaurants[i].rating+"</p>"
+    }
+    document.getElementById("restaurants").innerHTML = res;
+    document.getElementById("cuisine").innerHTML = cuisine;
+    document.getElementById("cost").innerHTML = cost;
+    document.getElementById("rating").innerHTML = rating;
+    var count = response.country;
+    document.getElementById("name").innerHTML = count.country;
+    document.getElementById("capital").innerHTML = count.capital;
+    document.getElementById("temp").innerHTML = count.averageTemperature + " " + count.measurement;
+    document.getElementById("currency").innerHTML = count.currencyName + " (" + count.currencyCode + ")";
+    var lang = count.languages.split(",");
+    var l = ""
+    for (var i = 0; i< lang.length; i++) {
+        l += lang[i] + " ";
+        if( i % 4 === 0) {
+            l += "<br>"
+        }
+        if ( i === lang.length - 1) { break; }
+
+    }
+    document.getElementById("languages").innerHTML = l;
+    var highlights = response.positive;
+    var h = "";
+    for (var i = 0; i< highlights.length; i++) {
+        h += "<p>" + highlights[i] + "</p>";
+    }
+    document.getElementById("highlights").innerHTML = h;
+    var urls = response.urls;
+    var urlElem = "";
+    for (var i = 0; i < urls.length; i++) {
+        urlElem += "<li class=\"w3-padding-16\">\n" +
+            "        <img src=\"blog-male.jpg\" class=\"w3-left w3-circle w3-margin-right\" style=\"width:35px\">\n" +
+            "        <span class=\"w3-xlarge\"><a href=\"" + urls[i] + "\">" + urls[i] + "</a></span><br>\n" +
+            "      </li>"
+    }
+    document.getElementById("url").innerHTML = urlElem;
+</script>
+
+<script>
+    // Get the Sidebar
+    var mySidebar = document.getElementById("mySidebar");
+
+    // Get the DIV with overlay effect
+    var overlayBg = document.getElementById("myOverlay");
+
+    // Toggle between showing and hiding the sidebar, and add overlay effect
+    function w3_open() {
+        if (mySidebar.style.display === 'block') {
+            mySidebar.style.display = 'none';
+            overlayBg.style.display = "none";
+        } else {
+            mySidebar.style.display = 'block';
+            overlayBg.style.display = "block";
+        }
+    }
+
+    // Close the sidebar with the close button
+    function w3_close() {
+        mySidebar.style.display = "none";
+        overlayBg.style.display = "none";
+    }
+</script>
+
+</body>
+</html>

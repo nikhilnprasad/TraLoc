@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<title>Traloc</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+.myLink {display: none}
+</style>
+<body class="w3-light-grey">
+
+<script>
+  function getRow(country) {
+      xmlhttp = new XMLHttpRequest();
+      xmlhttp.open("GET", "http://localhost:4567/api/traloc?country="+country, true);
+      xmlhttp.send();
+      setTimeout(function () {
+          localStorage.setItem("response",xmlhttp.responseText);
+          console.log(xmlhttp.responseText)
+          window.location.href = country + ".html"
+      }, 12000);
+  }
+</script>
+<!-- Navigation Bar -->
+<div class="w3-bar w3-white w3-border-bottom w3-xlarge">
+  <a href="#" class="w3-bar-item w3-button w3-text-red w3-hover-red"><b><i class="fa fa-map-marker w3-margin-right"></i>Traloc</b></a>
+  <a href="#" class="w3-bar-item w3-button w3-right w3-hover-red w3-text-grey"><i class="fa fa-search"></i></a>
+</div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
+  <img class="w3-image" src="Back3.jpg" alt="Back" width="1500" height="20">
+  <div class="w3-display-middle" style="width:65%">
+    <div class="w3-bar w3-black">
+      <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Destination');"><i class="fa fa-plane w3-margin-right"></i>Enter destination</button>
+    </div>
+
+    <!-- Tabs -->
+    <div id="Destination" class="w3-container w3-white w3-padding-16 myLink">
+      <div class="w3-row-padding" style="margin:0 -16px;">
+        <div class="dropdown">
+<button onclick="myFunction(); " class="dropbtn" >Click here to search for Destination</button>
+  <div id="myDropdown" class="dropdown-content">
+    <input class="w3-input w3-border" type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+   <a onclick="getRow('sri_lanka')">Sri Lanka</a>
+    <a onclick="getRow('sweden');">Sweden</a>
+    <a onclick="getRow('tanzania');">Tanzania</a>
+    <a onclick="getRow('panama');">Panama</a>
+    <a onclick="getRow('nepal');">Nepal</a>
+    <a onclick="getRow('turkey');">Turkey</a>
+    <a onclick="getRow('netherlands');">Netherlands</a>
+    <a onclick="getRow('denmark');">Denmark</a>
+    <a onclick="getRow('israel');">Israel</a>
+    <a onclick="getRow('japan');">Japan</a>
+    <a onclick="getRow('iran');">Iran</a>
+    <a onclick="getRow('peru');">Peru</a>
+    <a onclick="getRow('india');">India</a>
+    <a onclick="getRow('georgia_europe');">Georgia Europe</a>
+    <a onclick="getRow('argentina');">Argentina</a>
+    <a onclick="getRow('guatemala');">Guatemala</a>
+    <a onclick="getRow('germany');">Germany</a>
+    <a onclick="getRow('malaysia');">Malaysia</a>
+    <a onclick="getRow('italy');">Italy</a>
+    <a onclick="getRow('armenia');">Armenia</a>
+    <a onclick="getRow('latvia');">Latvia</a>
+    <a onclick="getRow('croatia');">Croatia</a>
+    <a onclick="getRow('france');">France</a>
+    <a onclick="getRow('iceland');">Iceland</a>
+    <a onclick="getRow('canada');">Canada</a>
+    <a onclick="getRow('vatican_city');">Vatican City</a>
+    <a onclick="getRow('new_zealand');">New Zealand</a>
+    <a onclick="getRow('vietnam');">Vietnam</a>
+    <a onclick="getRow('finland');">Finland</a>
+    <a onclick="getRow('norway');">Norway</a>
+    <a onclick="getRow('south_africa');">South Africa</a>
+    <a onclick="getRow('cambodia');">Cambodia</a>
+    <a onclick="getRow('indonesia');">Indonesia</a>
+    <a onclick="getRow('scotland');">Scotland</a>
+    <a onclick="getRow('morocco');">Morocco</a>
+    <a onclick="getRow('kenya');">Kenya</a>
+    <a onclick="getRow('portugal');">Portugal</a>
+    <a onclick="getRow('luxembourg');">Luxembourg</a>
+    <a onclick="getRow('slovenia');">Slovenia</a>
+    <a onclick="getRow('belgium');">Belgium</a>
+    <a onclick="getRow('greece');">Greece</a>
+    <a onclick="getRow('thailand');">Thailand</a>
+    <a onclick="getRow('switzerland');">Switzerland</a>
+    <a onclick="getRow('ukraine');">Ukraine</a>
+    <a onclick="getRow('zimbabwe');">Zimbabwe</a>
+    <a onclick="getRow('uae');">UAE</a>
+    <a onclick="getRow('cuba');">Cuba</a>
+    <a onclick="getRow('brazil');">Brazil</a>
+    <a onclick="getRow('czech_republic');">Czech Republic</a>
+    <a onclick="getRow('africa');">Africa</a>
+    <a onclick="getRow('poland');">Poland</a>
+    <a onclick="getRow('albania');">Albania</a>
+    <a onclick="getRow('jordan');">Jordan</a>
+    <a onclick="getRow('south_korea');">South Korea</a>
+    <a onclick="getRow('australia');">Australia</a>
+    <a onclick="getRow('singapore');">Singapore</a>
+    <a onclick="getRow('bolivia');">Bolivia</a>
+    <a onclick="getRow('england');">England</a>
+    <a onclick="getRow('spain');">Spain</a>
+    <a onclick="getRow('maldives');">Maldives</a>
+    <a onclick="getRow('mexico');">Mexico</a>
+    <a onclick="getRow('ireland');">Ireland</a>
+    <a onclick="getRow('china');">China</a>
+    <a onclick="getRow('usa');">USA</a>
+    <a onclick="getRow('austria');">Austria</a>
+    <a onclick="getRow('malta');">Malta</a>
+  </div>
+</div>
+              
+        
+<style>
+.dropbtn {
+    background-color: #FFA500;
+    color: white;
+    padding: 10px 325px 10px 325px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #ff0000;
+}
+
+#myInput {
+    border-box: box-sizing;
+    background-image: url('countries_html/searchicon.png');
+    background-position: 50px 50px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 10px 200px 10px 200px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+
+#myInput:focus {outline: 3px solid #ddd;}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+    padding: 10px 170px 10px 200px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 200px 10px 200px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #ddd}
+
+.show {display:block;}
+</style>
+    </div>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:2000px;">
+
+  <!-- Good offers -->
+  <div class="w3-container w3-margin-top w3-text-red">
+    <h3>Not sure of the Destination, let's search!</h3>
+  </div>
+ 
+      <div class=" w3-xlarge">
+          <span class="tooltiptext" id="tooltip"></span>
+          <iframe width="100%" height="680px" src="index.html" frameborder="0" scrolling="no" align="center">
+          </iframe>
+       
+
+      </div>
+  
+  <!-- Contact -->
+  <div class="w3-container">
+    <h2>Contact</h2>
+    <p>Was the information you were looking for not available?</p>
+    <i class="fa fa-map-marker" style="width:30px"></i> New York, US<br>
+    <i class="fa fa-phone" style="width:30px"></i> Phone: +00 151515<br>
+    <i class="fa fa-envelope" style="width:30px"> </i> Email: mail@mail.com<br>
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message" required name="Message"></p>
+      <p><button class="w3-button w3-black w3-padding-large" type="submit">SEND MESSAGE</button></p>
+    </form>
+  </div>
+  
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-center w3-opacity w3-margin-bottom">
+  <h5>Find Us On</h5>
+  <div class="w3-xlarge w3-padding-16">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+</footer>
+
+<script>
+// Tabs
+function openLink(evt, linkName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("myLink");
+  for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+  }
+  document.getElementById(linkName).style.display = "block";
+  evt.currentTarget.className += " w3-red";
+}
+// Click on the first tablink on load
+document.getElementsByClassName("tablink")[0].click();
+
+
+</script>
+
+
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function filterFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("myDropdown");
+    a = div.getElementsByTagName("a");
+    for (i = 0; i < a.length; i++) {
+        if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+            a[i].style.display = "";
+        } else {
+            a[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+
+
+
+</body>
+</html>
+
